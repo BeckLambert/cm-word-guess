@@ -6,7 +6,7 @@ function Word(word) {
 
     this.makeWords = function() {
         var wordArr = this.word.split("");
-        for(var i = 0; i < wordArr.length; i++) {
+        for(var i = 0; i < this.wordArr.length; i++) {
             var newLetter = new Letter(wordArr[i]);
             this.letters.push(newLetter);
         }
@@ -16,6 +16,14 @@ function Word(word) {
         this.letters.forEach(letter => {
             letter.checkLetter(guess);
         });
+    }
+
+    this.update = function() {
+        var printedWord = "";
+        this.letters.forEach(letter => {
+            printedWord += letter.getCharacter() + " ";
+        });
+        return printedWord;
     }
 }
 

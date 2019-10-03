@@ -11,12 +11,12 @@ function Letter(character) {
           };
         
           this.checkLetter = function(guess) {
-            if(guess === this.character) {
+            if(guess === this.character.toLowerCase()) {
               this.guessed = true;
             };
           };
 };
 
-// var letter = new Letter("a");
-// console.log(letter);
+var letter = new Letter("a");
+console.log(letter);
 module.exports = Letter;
