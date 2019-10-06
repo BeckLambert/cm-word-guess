@@ -18,5 +18,7 @@ function Letter(character) {
 };
 
 var letter = new Letter("a");
-console.log(letter);
+// console.log(letter);
+letter.checkLetter("a");
+console.log(letter.getCharacter());
 module.exports = Letter;

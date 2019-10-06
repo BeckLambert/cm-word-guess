@@ -6,7 +6,8 @@ function Word(word) {
 
     this.makeWords = function() {
         var wordArr = this.word.split("");
-        for(var i = 0; i < this.wordArr.length; i++) {
+        console.log(wordArr);
+        for(var i = 0; i < wordArr.length; i++) {
             var newLetter = new Letter(wordArr[i]);
             this.letters.push(newLetter);
         }
@@ -28,8 +29,11 @@ function Word(word) {
 }
 
 
-
-
+var cat = new Word("cat");
+// console.log(cat);
+console.log(cat.makeWords());
+// console.log(cat.guesses());
+console.log(cat.update());
 
 
 module.exports = Word;
