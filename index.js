@@ -22,3 +22,45 @@ function playGame() {
         makeGuess();
     }
 };
+
+function getWord () {
+    var rand = Math.floor(Math.random() * words.length);
+    var randWord = words[rand];
+    if(pickedWords.indexOf(randWord) === -1) {
+        pickedWords.push(randWord);
+        return randWord
+    } else {
+        return getWord();
+    }
+};
+
+function makeGuess() {
+    var checker = [];
+    inquirer
+        .prompt([
+            {
+                name: "guessedLetter",
+                message: word.update() + 
+                    "\nGuess a letter!" +
+                        "\nGuesses left: " + guesses
+            }
+        ]).then(data => {
+            word.letters.forEach(letter => {
+                letter.checkLetter(data.guessedLetter);
+                checker.push(letter.getCharacter());
+            });
+            if(guesses > 0 && checker.indexOf("_") !== -1) {
+                guesses--;
+                if(guesses === 0) {
+                    console.log("No more guesses. Game over!");
+                    continuePrompt();
+                } else {
+                    makeGuess();
+                }
+            } else {
+                console.log("You guessed it!");
+                console.log(word.update());
+                playGame();
+            }
+        });
+};
