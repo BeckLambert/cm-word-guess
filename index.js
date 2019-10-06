@@ -64,3 +64,23 @@ function makeGuess() {
             }
         });
 };
+
+function continuePrompt() {
+    inquirer
+        .prompt([
+            {
+               name: "continue",
+               type: "list",
+               message: "Do you want to guess another word?",
+               choices: ["Yes", "No"]
+            }
+        ]).then(data => {
+            if(data.continue === "Yes") {
+                init();
+            } else {
+                console.log("Thanks for playing!");
+            }
+        });
+}
+
+init();
