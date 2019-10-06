@@ -13,11 +13,11 @@ function Word(word) {
         }
     }
 
-    this.guesses = function(guess) {
-        this.letters.forEach(letter => {
-            letter.checkLetter(guess);
-        });
-    }
+    // this.guesses = function(guess) {
+    //     this.letters.forEach(letter => {
+    //         letter.checkLetter(guess);
+    //     });
+    // }
 
     this.update = function() {
         var printedWord = "";
@@ -29,11 +29,11 @@ function Word(word) {
 }
 
 
-var cat = new Word("cat");
-// console.log(cat);
-console.log(cat.makeWords());
-// console.log(cat.guesses());
-console.log(cat.update());
+// var cat = new Word("cat");
+// // console.log(cat);
+// console.log(cat.makeWords());
+// // console.log(cat.guesses());
+// console.log(cat.update());
 
 
 module.exports = Word;

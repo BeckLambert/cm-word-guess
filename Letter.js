@@ -17,8 +17,8 @@ function Letter(character) {
           };
 };
 
-var letter = new Letter("a");
-// console.log(letter);
-letter.checkLetter("a");
-console.log(letter.getCharacter());
+// var letter = new Letter("a");
+// // console.log(letter);
+// letter.checkLetter("a");
+// console.log(letter.getCharacter());
 module.exports = Letter;

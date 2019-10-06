@@ -76,11 +76,9 @@ function continuePrompt() {
             }
         ]).then(data => {
             if(data.continue === "Yes") {
-                init();
             } else {
                 console.log("Thanks for playing!");
             }
         });
 }
 
-init();
